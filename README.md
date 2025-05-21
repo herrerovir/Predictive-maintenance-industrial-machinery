@@ -1,45 +1,128 @@
-# 🛠️⚙️ Predictive maintenance of an industrial milling machine
+# 🛠️⚙️ Predictive Maintenance for Industrial Machinery
  
-This repository contains a machine learning project focused on predicting the failure of an industrial milling machine. 
+This repository contains a machine learning project focused on predicting the failure of an industrial milling machine, aiming to optimize maintenance schedules and minimize downtime.
 
-The complete project is available in the Jupyter notebook titled **Predictive-maintenance-of-industrial-machinery.ipynb** in this repository.
+## 📚 Table of Contents
 
-## Table of content
- - [Introduction](https://github.com/herrerovir/ML-predictive-maintenance-of-industrial-machinery/blob/main/README.md#Introduction)
- - [Goal](https://github.com/herrerovir/ML-predictive-maintenance-of-industrial-machinery/blob/main/README.md#Goal)
- - [Dependencies](https://github.com/herrerovir/ML-predictive-maintenance-of-industrial-machinery/blob/main/README.md#Dependencies)
- - [Dataset](https://github.com/herrerovir/ML-predictive-maintenance-of-industrial-machinery/blob/main/README.md#Datasest)
- - [Project Overview](https://github.com/herrerovir/ML-predictive-maintenance-of-industrial-machinery/blob/main/README.md#Project-overview)
- - [Data exploration](https://github.com/herrerovir/ML-predictive-maintenance-of-industrial-machinery/blob/main/README.md#Data-exploration)
- - [Data sampling](https://github.com/herrerovir/ML-predictive-maintenance-of-industrial-machinery/blob/main/README.md#Data-sampling)
- - [Algorithms](https://github.com/herrerovir/ML-predictive-maintenance-of-industrial-machinery/blob/main/README.md#Algorithms)
- - [Evaluation metrics](https://github.com/herrerovir/ML-predictive-maintenance-of-industrial-machinery/blob/main/README.md#Evaluation-metrics)
- - [Modeling and evaluation](https://github.com/herrerovir/ML-predictive-maintenance-of-industrial-machinery/blob/main/README.md#Modeling-and-evaluation)
- - [Conclusions](https://github.com/herrerovir/ML-predictive-maintenance-of-industrial-machinery/blob/main/README.md#Conclusions)
- - [Learning outcomes](https://github.com/herrerovir/ML-predictive-maintenance-of-industrial-machinery/blob/main/README.md#Learning-outcomes)
+- [Introduction](#introduction)
+- [Goal](#goal)
+- [Project Overview](#project-overview)
+- [Dependencies](#dependencies)
+- [How to Run the Project](#how-to-run-the-project)
+- [Repository Structure](#repository-structure)
+- [Technical Skills](#technical-skills)
+- [Dataset](#dataset)
+- [Data Exploration](#data-exploration)
+- [Data Sampling](#data-sampling)
+- [Algorithms](#algorithms)
+- [Evaluation Metrics](#evaluation-metrics)
+- [Modeling and evaluation](#modeling-and-evaluation)
+- [Random Forest Model](#random-forest-model)
+- [Conclusions](#conclusions)
+- [Learning Outcomes](#learning-outcomes)
 
-## Introduction
+## 📌 Introduction
 
 Predictive maintenance anticipates equipment failures before they happen by using data and advanced technology to identify potential issues early. Analyzing (sensor) data and machine learning, companies can prevent breakdowns, avoid expensive unplanned downtime, reduce repair expenses, and extend the lifespan of their machinery. Transitioning from reactive to proactive maintenance enhances productivity, ensures smoother operations, and boosts profitability.
 
-## Goal
+## 🎯 Goal
 
 The goal of this project is to develop a multiclass classification machine learning model capable of predicting failures of an industrial milling machine. The model will not only forecast whether a failure will happen but also identify the type of failure. This predictive capability seeks to improve operational efficiency, reduce repair costs and extend equipment life to ultimately ensure smoother production processes and higher overall productivity.
 
-## Dependencies
+## 👀 Project Overview
 
-The following tools are required to carry out this project:
+This project is organized into the following phases:
 
-* Python 3
-* Jupyter Notebooks
-* Python libraries: 
-    - Numpy
-    - Pandas
-    - Matplotlib.pyplot
-    - Seaborn
-    - Scikit-learn
+- Loading and cleaning a synthetic dataset that simulates the operation of an industrial milling machine
+- Exploring and analyzing how process parameters relate to machine failures
+- Testing different models to find the most effective one for predicting failures
+- Building and training a Random Forest model
+- Evaluating the model’s performance to measure its accuracy and reliability
 
-## Dataset
+## 🧰 Dependencies
+
+The libraries used:
+
+- `pandas` – Data manipulation  
+- `numpy` – Numerical computation  
+- `matplotlib` and `seaborn` – Data visualization  
+- `scikit-learn` – Machine learning
+
+## 💻 How to Run the Project
+
+1. **Clone the Repository**
+
+   Start by cloning the repository to your local machine using the following command:
+
+   ```shell
+   git clone https://github.com/herrerovir/Predictive-maintenance-industrial-machinery
+   ```
+
+   Change to the project directory:
+
+   ```shell
+   cd Predictive-maintenance-industrial-machinery
+   ```
+
+2. **Install Dependencies**
+
+   Install the required dependencies listed in the `requirements.txt`:
+
+   ```shell
+   pip install -r requirements.txt
+   ```
+
+   This will install all necessary libraries such as pandas, numpy, matplotlib, and seaborn.
+
+3. **Run the Jupyter Notebook**
+
+   After installing the dependencies, you can run the Jupyter notebook to perform the data analysis. To start the notebook, use the following command:
+
+   ```shell
+   jupyter notebook notebooks/Predictive-maintenance-industrial-machinery.ipynb
+   ```
+
+## 📂 Repository Structure
+
+```
+Predictive-maintenance-industrial-machinery/
+│
+├── data/
+│   └── raw/
+│       └── predictive-maintenance-dataset-ai4i2020.csv         # Original dataset
+│   └── processed/
+│       └── Predictive-maintenance-cleaned-dataset.csv          # Clean and processed dataset
+│
+├── model/
+│   └── best-random-forest-model.pkl                            # Trained model
+│
+├── notebooks/
+│   └── Predictive-maintenance-industrial-machinery.ipynb       # Jupyter Notebook with the full analysis
+│
+├── results/
+│   └── figures/
+│       └── Random-Forest-Confusion-Matrix.png                  # Visualizations
+│       └── Random-Forest-Feature-Importance.png                # Visualizations
+│       └── Random-Forest-Precision-Recall-Curve.png            # Visualizations
+│       └── Random-Forest-ROC-AUC-Curve.png                     # Visualizations
+│ 
+│   └── model-results/
+│       └── random-forest-results.txt                           # Results from the model as txt file
+│
+├── requirements.txt                                            # Requirements file
+│
+└── README.md                                                   # Project overview and documentation
+```
+
+## 🧠 Technical Skills Demonstrated
+
+- Data cleaning and preprocessing  
+- Exploratory Data Analysis (EDA)  
+- Model development and evaluation  
+- Regression techniques in `scikit-learn`  
+- Visualization and interpretation of model results
+
+## 🗂️ Dataset
 
 The dataset used for this project is part of the following publication:
 
@@ -47,22 +130,7 @@ _S. Matzka, "Explainable Artificial Intelligence for Predictive Maintenance Appl
 
 It is available in a CSV file uploaded to this repository under the name "predictive-maintenance-dataset-ai4i2020". The dataset consists of: 10000 rows and 14 columns.
 
-## Project overview
-
-- Data exploration
-- Data sampling
-- Algorithms
-- Evaluation metrics
-- Modeling and evaluation
-- Insights
-
-## Data exploration
-
-The exploratory data analysis workflow for this project included the following steps: 
-
-- Data cleaning: it included handling of missing values, duplicated values, remove unnecesary columns and enhance readability of the features
-- Univariate exploration: it consisted of individual exploration of each feature, leading to the conclusion that this project is facing a highly imbalanced dataset
-- Bivariate exploration: it involved exploring relationships between pair of variables to identify dependencies or correlations.
+## 🔍 Data exploration
 
 **The key insight of the data exploration are the following:**
 
@@ -76,11 +144,11 @@ The exploratory data analysis workflow for this project included the following s
 - There is a high positive correlation between air temperature and process temperature.
 - There is a high negative correlation between torque and rotational speed.
 
-## Data sampling
+## 🧪 Data sampling
 
 During the data exploration phase it was discovered that the dataset is highly imbalanced. Class imbalance is a major issue in machine learning, as it can skew model training and results. For example, a model could show 97% accuracy without actually predicting any failures. To address thi problems, data augmentation is used to balance the ratio of failure to non-failure observations to 80/20, while also ensuring diverse failure causes. In this project, the data augmentation technique used was SMOTE (Synthethic Minority Oversampling Technique). SMOTE creates new samples by adjusting existing points based on their neighbors, preserving the minority class while expanding the dataset. It's applied only to the training set after splitting the data, ensuring the test set reflects the original distribution and prevents information leakage, thus maintaining evaluation integrity.
 
-## Algorithms
+## 🤖 Algorithms
 
 Two different algorithms were employed to predict milling machine failures: decision tree and random forest.
 
@@ -92,7 +160,7 @@ A decision tree model is an intuitive machine learning algorithm that helps you 
 
 A random forest model is a machine learning algorithm that uses multiple decision trees to make predictions. It works by creating a “forest” of trees, each trained on a different subset of data. When making a prediction, the model combines the results from all the trees to reach a final decision, which helps improve accuracy and reduce the risk of overfitting.
 
-## Evaluation metrics
+## ✅ Evaluation metrics
 
 The evaluation metrics used to assess model performance were as follows:
 
@@ -104,43 +172,13 @@ The evaluation metrics used to assess model performance were as follows:
 - **Classification report:** includes precision, recall, and F1-score for each class.
 - **ROC AUC:** the model's ability to distinguish between classes.
 
-## Modeling and evaluation
+## 📋 Modeling and evaluation
 
-The goal is to develop a predictive model capable of forecasting machine failures. As previously mentioned, the algorithms used were decision tree and random forest. Given the highly imbalanced nature of the dataset, two models were created for each algorithm: one using the original training set and another employing an oversampled training set.
+The goal is to develop a predictive model capable of forecasting machine failures. As previously mentioned, the algorithms used were decision tree and random forest. Given the highly imbalanced nature of the dataset, two models were created for each algorithm: one using the original training set and another employing an oversampled training set. After evaluation the four models, it was chosen to use the oversampled random forest as the final model to use in this problem. 
 
-- **Decision Tree:**
+## 🌲 Random Forest Model
 
-The evaluation metrics of both decision tree models are shown below:
-
-| **Metric**                     | **Original Decision Tree Model** | **Oversampled Decision Tree Model** |
-|--------------------------------|----------------------------------|-------------------------------------|
-| **Accuracy**                   | 0.98                             | 0.97                                |
-| **F1 Score**                   | 0.98                             | 0.97                                |
-| **Precision**                  | 0.98                             | 0.98                                |
-| **Recall**                     | 0.98                             | 0.97                                |
-| **ROC AUC Score**              | 0.80                             | 0.82                                |
-
-![confusion-matrix-dt-comparison](https://github.com/user-attachments/assets/e6b2ddeb-4a44-4ed4-9d4f-9bcac2e6fd2e)
-
-The comparison between both models reveals that the original decision tree model has a slight edge in accuracy and recall compared to the oversampled model. However, the oversampled model stands out by improving the ROC AUC score from 0.80 to 0.82, which shows it’s better at distinguishing between classes. So, while the original model performs well overall, the oversampled model is more effective at tackling class imbalance thanks to its stronger ROC AUC performance.
-
-- **Random Forest:**
-
-| **Metric**                     | **Original Random Forest Model** | **Oversampled Random Forest Model** |
-|--------------------------------|----------------------------------|-------------------------------------|
-| **Accuracy**                   | 0.98                             | 0.97                                |
-| **F1 Score**                   | 0.98                             | 0.98                                |
-| **Precision**                  | 0.98                             | 0.98                                |
-| **Recall**                     | 0.98                             | 0.97                                |
-| **ROC AUC Score**              | 0.98                             | 0.97                                |
-
-![Confusion-matrix-dt-rf-comparison](https://github.com/user-attachments/assets/3f1f4785-c7dc-420b-b455-4a9696442780)
-
-The comparison between the two random forest models shows that the original model slightly outperforms the oversampled model. Both have the same F1 score and precision, indicating similar performance in balancing false positives and negatives. The original model also has higher recall and a better ROC AUC score. However, the confusion matrix and classification report reveal that the original model fails to predict any observations for class 1, while the oversampled model demonstrates better precision and recall than both the original random forest and the oversampled decision tree discrimination classes. For all these reason the oversampled random forest is the best algorithm for this task. 
-
-- **Final Model: Oversampled and Tuned Random Forest**
-
-After sampling and applying hyperparameter tuning, the metrics of the random forest model are the following:
+After sampling using the SMOTE method and applying hyperparameter tuning, the metrics of the random forest model are the following:
 
 | **Metric**                      | **Value**  |
 |---------------------------------|------------|
@@ -150,14 +188,7 @@ After sampling and applying hyperparameter tuning, the metrics of the random for
 | **Recall**                      | 0.97       |
 | **ROC AUC Score**               | 0.99       |
 
-![Confusion-matrix-final-model](https://github.com/user-attachments/assets/a1248004-1cd9-43ee-a89b-484576d799ea)
-
-![Roc-curve-final-model](https://github.com/user-attachments/assets/838d4590-cc09-4c6a-8221-b267cf954e7c)
-
-![Precison-recall-final-model](https://github.com/user-attachments/assets/72bd28cb-4393-4b58-afef-fd4603299123)
-
-
-The **Best Oversampled Random Forest Model** has high accuracy and F1 scores but struggles with classifying class 1. Despite hyperparameter tuning, the model needs further adjustments to enhance performance across all classes. Nonetheless, it generally outperforms other models for several reasons:
+The **Random Forest** model has high accuracy and F1 scores but struggles with classifying class 1. Despite hyperparameter tuning, the model needs further adjustments to enhance performance across all classes. Nonetheless, it is the best option to solve this problem for several reasons:
 
 - **ROC AUC Score**: The tuned model achieves a higher ROC AUC score of 0.99, indicating better class distinction, which is crucial for effective predictions.
 
@@ -167,7 +198,7 @@ The **Best Oversampled Random Forest Model** has high accuracy and F1 scores but
 
 In conclusion, the tuned model has a good performance and it is better at recognizing important yet infrequent classes, making it a solid choice for real-world applications where understanding all classes is essential.
 
-## Conclusion
+## 💡 Conclusion
 
 The goal of this project was to develop a predictive model using decision tree and random forest algorithms to predict the failure of an industrial milling machine.
 
@@ -179,7 +210,7 @@ Four models were developed: a decision tree without oversampling, a decision tre
 
 As previously mentioned, although the current model performs well, it can be further optimized. Future efforts should focus on exploring more advanced algorithms, such as XGBoost, that can provide better class discrimination. In addition, expanding the dataset to include more minority class observations will be essential to improve classification accuracy.
 
-## Learning Outcomes
+## 🎓 Learning Outcomes
 
 - **Data Preprocessing:** develop skills in cleaning and preparing data, including ordinal encoding and performing data augmentation using SMOTE.
 
