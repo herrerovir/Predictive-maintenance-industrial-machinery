@@ -10,6 +10,8 @@ PROCESSED_DIR = DATA_DIR / "processed"
 
 # === Figures Directory ===
 FIGURES_DIR = ROOT_DIR / "figures"
+EDA_FIGURES_DIR = FIGURES_DIR / "eda"
+MODEL_FIGURES_DIR = FIGURES_DIR / "model"
 
 # === Model Directory ===
 MODEL_DIR = ROOT_DIR / "models"
@@ -29,6 +31,8 @@ for path in [
     
     # Figures
     FIGURES_DIR,
+    EDA_FIGURES_DIR,
+    MODEL_FIGURES_DIR,
     
     # Models
     MODEL_DIR,
