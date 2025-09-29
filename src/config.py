@@ -12,6 +12,7 @@ PROCESSED_DIR = DATA_DIR / "processed"
 FIGURES_DIR = ROOT_DIR / "figures"
 EDA_FIGURES_DIR = FIGURES_DIR / "eda"
 MODEL_FIGURES_DIR = FIGURES_DIR / "model"
+SHAP_FIGURES_DIR = FIGURES_DIR / "shap"
 
 # === Model Directory ===
 MODEL_DIR = ROOT_DIR / "models"
