@@ -36,6 +36,7 @@ for path in [
     FIGURES_DIR,
     EDA_FIGURES_DIR,
     MODEL_FIGURES_DIR,
+    SHAP_FIGURES_DIR,
     
     # Models
     MODEL_DIR,
