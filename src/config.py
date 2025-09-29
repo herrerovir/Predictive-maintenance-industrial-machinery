@@ -1,4 +1,6 @@
 from pathlib import Path
+import random
+import numpy as np
 
 # === Project Root ===
 ROOT_DIR = Path(__file__).resolve().parents[1]  # Assumes /src/config.py
@@ -46,3 +48,11 @@ for path in [
     METRICS_RESULTS_DIR   
 ]:
     path.mkdir(parents = True, exist_ok = True)
+
+# === Reproducibility ===
+SEED = 42
+TEST_SIZE = 0.2
+
+# Set global seeds for reproducibility
+random.seed(SEED)
+np.random.seed(SEED)
