@@ -1,0 +1,11 @@
+=== Cross-Validation Results ===
+Scoring Metric: Weighted F1
+CV Strategy: RepeatedStratifiedKFold (n_splits = 5, n_repeats = 3, random_state = 42)
+
+Fold Scores:
+[0.99701794 0.99701965 0.99675852 0.99728039 0.99598031 0.99676105
+ 0.9971495  0.99675804 0.99740906 0.99611044 0.99571871 0.99701955
+ 0.99649796 0.99753831 0.99676042]
+
+Mean Weighted F1 Score: 0.9968
+Standard Deviation: 0.0005
